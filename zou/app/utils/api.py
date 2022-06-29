@@ -1,4 +1,6 @@
-from flask_restful import Api, output_json
+from flask_restx import Api
+from flask_restx.representations import output_json
+
 
 
 def configure_api_from_blueprint(blueprint, route_tuples):

@@ -1,4 +1,4 @@
-from flask_restful import reqparse
+from flask_restx import reqparse
 from flask import request
 
 from zou.app.utils import fields

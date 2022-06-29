@@ -1,5 +1,6 @@
 from unicodedata import name
-from flask_restful import Resource, current_app
+from flask import current_app
+from flask_restx import Resource
 
 from zou.app.models.department import Department
 from zou.app.models.task_type import TaskType

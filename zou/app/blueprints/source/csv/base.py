@@ -5,7 +5,7 @@ import csv
 from sqlalchemy.exc import IntegrityError
 
 from flask import request, current_app
-from flask_restful import Resource
+from flask_restx import Resource
 from flask_jwt_extended import jwt_required
 
 from zou.app import app

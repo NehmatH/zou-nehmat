@@ -1,7 +1,7 @@
 import uuid
 
-from flask import request, jsonify, abort
-from flask_restful import Resource, reqparse, current_app
+from flask import request, jsonify, abort, current_app
+from flask_restx import Resource, reqparse
 from flask_principal import (
     Identity,
     AnonymousIdentity,

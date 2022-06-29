@@ -1,5 +1,5 @@
 from flask import request, current_app
-from flask_restful import reqparse
+from flask_restx import reqparse
 from flask_jwt_extended import jwt_required
 
 from sqlalchemy.exc import IntegrityError

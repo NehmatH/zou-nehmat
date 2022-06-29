@@ -1,5 +1,5 @@
 from flask import request
-from flask_restful import Resource, reqparse
+from flask_restx import Resource, reqparse
 from flask_jwt_extended import jwt_required
 
 from zou.app import name_space_assets, name_space_asset_types, name_space_projects, name_space_shots

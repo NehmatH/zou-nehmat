@@ -1,5 +1,5 @@
 from flask import request, abort
-from flask_restful import Resource
+from flask_restx import Resource
 from flask_jwt_extended import jwt_required
 
 from sqlalchemy.exc import StatementError

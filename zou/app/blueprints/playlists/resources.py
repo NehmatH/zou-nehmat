@@ -1,7 +1,7 @@
 import slugify
 
 from flask import request, send_file as flask_send_file
-from flask_restful import Resource
+from flask_restx import Resource
 from flask_jwt_extended import jwt_required
 
 from zou.app import config, name_space_projects, name_space_playlists
