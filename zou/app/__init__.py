@@ -2,8 +2,7 @@ import os
 import flask_fs
 import traceback
 
-from flask import Flask, jsonify, url_for, Blueprint, current_app
-from flask_restx import Api
+from flask import Flask, jsonify, current_app
 from flask_jwt_extended import JWTManager
 from flask_principal import Principal, identity_changed, Identity
 from flask_sqlalchemy import SQLAlchemy
@@ -28,6 +27,8 @@ from zou.app.utils import cache
 
 app = Flask(__name__)
 app.config.from_object(config)
+
+from flask_restx import Api
 
 flask_app = Api(app, doc='/api',
                 version="1.0",
