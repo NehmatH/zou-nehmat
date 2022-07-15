@@ -25,7 +25,7 @@ from zou.app.services.exception import PreviewFileNotFoundException
 from zou.app.utils import fs
 
 
-def get_preview_file_dimensions(project, entity):
+def get_preview_file_dimensions(project, entity=None):
     """
     Return dimensions set at entity level or project level or default
     dimensions if the dimensions are not set.
@@ -33,7 +33,9 @@ def get_preview_file_dimensions(project, entity):
     The default size is based on 1080 height
     """
     resolution = project["resolution"]
-    entity_data = entity.get("data", {}) or {}
+    entity_data = {}
+    if entity is not None:
+        entity_data = entity.get("data", {}) or {}
     entity_resolution = entity_data.get("resolution", None)
     width = None
     height = 1080
@@ -58,16 +60,16 @@ def _is_valid_resolution(resolution):
     """
     Return true if the dimension follows the 1920x1080 pattern.
     """
-    return resolution is not None and \
-        bool(re.match(r"\d{3,4}x\d{3,4}", resolution))
+    return resolution is not None and bool(
+        re.match(r"\d{3,4}x\d{3,4}", resolution)
+    )
 
 
 def _is_valid_partial_resolution(resolution):
     """
     Return true if the dimension follows the x1080 pattern.
     """
-    return resolution is not None and \
-        bool(re.match(r"x\d{3,4}", resolution))
+    return resolution is not None and bool(re.match(r"x\d{3,4}", resolution))
 
 
 def get_preview_file_fps(project):

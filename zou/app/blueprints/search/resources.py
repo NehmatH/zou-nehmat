@@ -39,5 +39,5 @@ class SearchResource(Resource, ArgsMixin):
 
         return {
             "assets": index_service.search_assets(query, open_project_ids),
-            "persons": persons
+            "persons": persons,
         }
