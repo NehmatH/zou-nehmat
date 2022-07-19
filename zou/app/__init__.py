@@ -57,13 +57,21 @@ swagger_template = {
   "tags": [
     { "name": "Authentification" },
     { "name": "Assets" },
+    { "name": "Breakdown" },
     { "name": "Comments" },
+    { "name": "Edits" },
+    { "name": "Entities" },
+    { "name": "Events" },
+    { "name": "Export" },
     { "name": "Files" },
+    { "name": "Index" },
+    { "name": "News" },
     { "name": "Persons" },
     { "name": "Playlists" },
     { "name": "Projects" },
     { "name": "Shots" },
     { "name": "Search" },
+    { "name": "Source" },
     { "name": "Tasks" },
     { "name": "User" }
   ]
