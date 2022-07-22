@@ -1,0 +1,4 @@
+---
+url: "./apispec_1.json"
+dom_id: "#swagger-ui"
+validatorUrl: "none"
