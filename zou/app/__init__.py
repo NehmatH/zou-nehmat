@@ -1,7 +1,7 @@
 import os
-import string
 import flask_fs
 import traceback
+import requests
 
 from flask import Flask, jsonify
 from flasgger import Swagger
@@ -25,7 +25,7 @@ from .services.exception import (
 from .utils import fs, logs
 
 from zou.app.utils import cache
-
+from zou import __version__
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -42,7 +42,7 @@ swagger_template = {
       "url": "https://www.cg-wire.com",
     },
     "termsOfService": "https://www.cg-wire.com/terms.html",
-    "version": "0.0.1",
+    "version": __version__,
     "license": {
         "name": "AGPL 3.0",
         "url": "https://www.gnu.org/licenses/agpl-3.0.en.html"
@@ -478,6 +478,14 @@ swagger_template = {
 		}
 	}
 }
+
+url="https://nehmath.github.io/zou-nehmat/apispec_1.json"
+#headers= {'User-Agent' :'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15', 'Content-Type': 'application/json; charset=utf-8'}
+resp = requests.get(url)
+with open('docs/apispec_1.json', 'w', encoding='utf-8') as outfile:
+	outfile.write(resp.content.decode('utf-8'))
+	
+#curl --output apispec_1.json http://127.0.0.1:5000/apispec_1.json
 
 
 
