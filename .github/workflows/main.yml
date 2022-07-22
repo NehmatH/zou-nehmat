@@ -10,17 +10,21 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: Update Zou on staging server
-      uses: appleboy/ssh-action@v0.1.4
-      with:
-       host: ${{ secrets.HOST }}
-       username: ${{ secrets.USERNAME }}
-       key: ${{ secrets.KEY }}
-       port: ${{ secrets.PORT }}
-       script_stop: true
-       script: |
-            cd /opt/zou
-            source /etc/zou/zou.env
-            sudo /opt/zou/zouenv/bin/pip install --upgrade git+https://github.com/cgwire/zou.git
-            sudo -E -u zou /opt/zou/zouenv/bin/zou upgrade-db
-            sudo systemctl restart zou zou-events zou-jobs
+      - run:  sudo docker pull postgres
+              sudo docker run \
+                  --name postgres \
+                  -p 5432:5432 \
+                  -e POSTGRES_PASSWORD=mysecretpassword \
+                  -d postgres
+      - run:  sudo docker pull redis
+              sudo docker run \
+                  --name redis \
+                  -p 6379:6379 \
+                  -d redis
+      - run:  sudo apt-get install ffmpeg
+      - run:  git clone git@github.com:cgwire/zou.git
+      - run:  pip install virtualenvwrapper
+      - run:  mkvirtualenv zou
+              workon zou
+      - run: pip install -r requirements.txt
+      - run: curl --output apispec_1.json https://nehmath.github.io/zou-nehmat/apispec_1.json
