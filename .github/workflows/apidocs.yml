@@ -12,8 +12,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: master #change to apidocs
-      - run: |
-          ls -lrt
+          ref: apidocs 
+      - name: Update apispec.json
+        run: |
+          cd docs
           curl --output apispec_1.json https://nehmath.github.io/zou-nehmat/apispec_1.json
-    
+          git add apispec_1.json
+          git config --global user.email "no-reply@cg-wire.com"
+          git config --global user.name "CGWire bot"
+          git commit -m "apispec_1.json from master"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: apidocs
