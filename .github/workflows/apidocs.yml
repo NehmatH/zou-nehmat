@@ -1,0 +1,19 @@
+name: Update apidocs
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master #change to apidocs
+      - run: 
+          ls -lrt
+          curl --output apispec_1.json https://nehmath.github.io/zou-nehmat/apispec_1.json
+    
