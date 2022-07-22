@@ -25,6 +25,7 @@ from .services.exception import (
 from .utils import fs, logs
 
 from zou.app.utils import cache
+from zou import __version__
 
 
 app = Flask(__name__)
@@ -42,7 +43,7 @@ swagger_template = {
       "url": "https://www.cg-wire.com",
     },
     "termsOfService": "https://www.cg-wire.com/terms.html",
-    "version": "0.0.1",
+    "version": __version__,
     "license": {
         "name": "AGPL 3.0",
         "url": "https://www.gnu.org/licenses/agpl-3.0.en.html"
