@@ -47,7 +47,8 @@ class AddPreviewResource(Resource):
             name: task_id
             required: True
             schema:
-                type: UUID
+                type: integer
+                format: UUID
                 example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: comment_id
