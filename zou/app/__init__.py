@@ -46,8 +46,8 @@ swagger_template = {
         "url": "https://www.gnu.org/licenses/agpl-3.0.en.html"
     },
   },
-  "host": "localhost:8080",
-  "basePath": "/api",
+  "host": "apidocs.cg-wire.com",
+  "basePath": "",
   "schemes": [
     "http",
     "https"
