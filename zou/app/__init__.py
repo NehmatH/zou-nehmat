@@ -83,7 +83,7 @@ swagger_template = {
 				"id": {
 					"type": "integer",
 					"format": "int64",
-					"exemple": "jdsfkjshjd"
+					"exemple": "jshd"
 				},
 				"petId": {
 					"type": "integer",
