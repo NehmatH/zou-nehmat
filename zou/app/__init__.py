@@ -47,7 +47,7 @@ swagger_template = {
     },
   },
   "host": "apidocs.cg-wire.com",
-  "basePath": "",
+  "basePath": "/",
   "schemes": [
     "http",
     "https"
