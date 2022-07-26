@@ -271,7 +271,7 @@ class EditsAndTasksResource(Resource):
         parameters:
           - in: query
             name: project_id
-            required: True
+            required: False
             type: string
             format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
@@ -341,6 +341,8 @@ class ProjectEditsResource(Resource):
                         type: string  
                     data:
                         type: array
+                        items:
+                            type: string
                     episode_id:
                         type: string
                         format: UUID

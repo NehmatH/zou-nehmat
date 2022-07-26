@@ -194,6 +194,8 @@ class BaseModelsResource(Resource):
                 properties:
                     data:
                         type: array
+                        items:
+                            type: string
                     total:
                         type: integer  
                     nb_pages:
@@ -359,6 +361,8 @@ class BaseModelResource(Resource):
                 properties:
                     data:
                         type: array
+                        items:
+                            type: string
                     total:
                         type: integer  
                     nb_pages:

@@ -74,7 +74,10 @@ swagger_template = {
     { "name": "Source" },
     { "name": "Tasks" },
     { "name": "User" }
-  ]
+  ],
+  "definitions": {
+	"$ref": "definitions.json"
+  }
 }
 
 

@@ -147,6 +147,8 @@ class CommentTaskResource(Resource):
                         example: 2022-07-12T13:00:00
                     checklist:
                         type: array
+                        items:
+                            type: string
         responses:
             201:
                 description: New comment created
