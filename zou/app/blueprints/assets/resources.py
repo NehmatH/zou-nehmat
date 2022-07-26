@@ -38,9 +38,9 @@ class AssetResource(Resource):
         parameters:
           - in: path
             name: asset_id
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25
             required: True
         responses:
           200:
@@ -61,9 +61,9 @@ class AssetResource(Resource):
         parameters:
           - in: path
             name: asset_id
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25
             required: True
         responses:
           204:
@@ -153,9 +153,9 @@ class AssetTypeResource(Resource):
         parameters:
           - in: path
             name: asset_type_id
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25
             required: True
         responses:
           200:
@@ -197,9 +197,9 @@ class ProjectAssetTypesResource(Resource):
         parameters:
           - in: path
             name: project_id
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25
             required: True
         responses:
           200:
@@ -223,9 +223,9 @@ class ShotAssetTypesResource(Resource):
         parameters:
           - in: path
             name: shot_id
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25
             required: True
         responses:
           200:
@@ -250,9 +250,9 @@ class ProjectAssetsResource(Resource):
         parameters:
           - in: path
             name: project_id
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25
             required: True
         responses:
           200:
@@ -283,15 +283,15 @@ class ProjectAssetTypeAssetsResource(Resource):
           - in: path
             name: project_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: asset_type_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25        
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25        
         responses:
             200:
                 description: All assets for given project and entity type    
@@ -322,9 +322,9 @@ class AssetAssetsResource(Resource):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
                 description: All assets for a given asset    
@@ -347,9 +347,9 @@ class AssetTasksResource(Resource):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
                 description: All tasks related to given shot   
@@ -371,9 +371,9 @@ class AssetTaskTypesResource(Resource):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
                 description: All task types related to given asset    
@@ -398,15 +398,15 @@ class NewAssetResource(Resource):
           - in: path
             name: project_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: asset_type_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: body
             name: Asset
             description: Name, description, data and ID of asset
@@ -425,7 +425,8 @@ class NewAssetResource(Resource):
                     data:
                         type: string
                     source_id:
-                        type: UUID
+                        type: string
+                        format: UUID
                         example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             201:
@@ -468,9 +469,9 @@ class AssetCastingResource(Resource):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
                 description: Casting of given asset    
@@ -491,9 +492,9 @@ class AssetCastingResource(Resource):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
                 description: Modification of assets linked to given asset    
@@ -516,9 +517,9 @@ class AssetCastInResource(Resource):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
                 description: Casting of given asset    
@@ -541,9 +542,9 @@ class AssetShotAssetInstancesResource(Resource):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
                 description: All shot asset instances linked to asset    
@@ -565,9 +566,9 @@ class AssetSceneAssetInstancesResource(Resource):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
                 description: All scene asset instances linked to asset    
@@ -589,9 +590,9 @@ class AssetAssetInstancesResource(Resource, ArgsMixin):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
                 description: All asset instances instantiated inside given asset    
@@ -611,9 +612,9 @@ class AssetAssetInstancesResource(Resource, ArgsMixin):
           - in: path
             name: asset_id
             required: True
-            schema:
-                type: UUID
-                example: a24a6ea4-ce75-4665-a070-57453082c25       
+            type: string
+            format: UUID
+            x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             201:
                 description: Asset instance created inside given asset    

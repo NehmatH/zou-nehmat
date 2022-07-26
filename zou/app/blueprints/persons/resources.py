@@ -331,7 +331,7 @@ class PersonYearTimeSpentsResource(Resource, ArgsMixin):
             name: year
             required: True
             type: integer
-            example: 2022
+            x-example: 2022
         responses:
             200:
                 description: Aggregated time spents for given person and year
@@ -371,7 +371,7 @@ class PersonMonthTimeSpentsResource(Resource, ArgsMixin):
             name: year
             required: True
             type: integer
-            example: 2022
+            x-example: 2022
           - in: path
             name: month
             required: True
