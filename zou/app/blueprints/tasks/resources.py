@@ -46,12 +46,14 @@ class AddPreviewResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: comment_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             201:
@@ -86,17 +88,20 @@ class AddExtraPreviewResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: comment_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: preview_file_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             201:
@@ -126,17 +131,20 @@ class AddExtraPreviewResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: comment_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: preview_file_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             204:
@@ -164,7 +172,8 @@ class TaskPreviewsResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -192,7 +201,8 @@ class TaskCommentsResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -225,12 +235,14 @@ class TaskCommentResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: comment_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -272,12 +284,14 @@ class TaskCommentResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: comment_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             204:
@@ -314,7 +328,8 @@ class PersonTasksResource(Resource):
           - in: path
             name: person_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -350,12 +365,14 @@ class PersonRelatedTasksResource(Resource):
           - in: path
             name: person_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: task_type_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -385,7 +402,8 @@ class PersonDoneTasksResource(Resource):
           - in: path
             name: person_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -420,12 +438,14 @@ class CreateShotTasksResource(Resource):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: task_type_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             201:
@@ -467,12 +487,14 @@ class CreateAssetTasksResource(Resource):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: task_type_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             201:
@@ -513,12 +535,14 @@ class CreateEditTasksResource(Resource):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: task_type_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             201:
@@ -561,7 +585,8 @@ class ToReviewResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: body
             name: Task
@@ -570,7 +595,8 @@ class ToReviewResource(Resource):
                 type: object
                 properties:
                     person_id:
-                        type: UUID
+                        type: string
+                        format: UUID
                         example: a24a6ea4-ce75-4665-a070-57453082c25
                     comment:
                         type: string  
@@ -667,10 +693,12 @@ class ClearAssignationResource(Resource):
                   - task_ids
                 properties:
                     task_ids:
-                        type: UUID
+                        type: string
+                        format: UUID
                         example: a24a6ea4-ce75-4665-a070-57453082c25
                     person_id:
-                        type: UUID  
+                        type: string
+                        format: UUID  
                         example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -724,7 +752,8 @@ class TasksAssignResource(Resource):
         parameters:
           - in: path
             name: person_id
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
             required: True
           - in: body
@@ -736,7 +765,8 @@ class TasksAssignResource(Resource):
                   - task_ids
                 properties:
                     task_ids:
-                        type: UUID
+                        type: string
+                        format: UUID
                         example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -797,7 +827,8 @@ class TaskAssignResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: body
             name: Person
@@ -808,7 +839,8 @@ class TaskAssignResource(Resource):
                   - person_id
                 properties:
                     person_id:
-                        type: UUID
+                        type: string
+                        format: UUID
                         example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -863,7 +895,8 @@ class TaskFullResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -892,12 +925,14 @@ class TaskForEntityResource(Resource):
           - in: path
             name: entity_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: task_type_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -926,7 +961,8 @@ class SetTimeSpentResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: date
@@ -937,7 +973,8 @@ class SetTimeSpentResource(Resource):
           - in: path
             name: person_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: body
             name: Duration
@@ -994,7 +1031,8 @@ class AddTimeSpentResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: date
@@ -1005,7 +1043,8 @@ class AddTimeSpentResource(Resource):
           - in: path
             name: person_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: body
             name: Duration
@@ -1060,7 +1099,8 @@ class GetTimeSpentResource(Resource):
           - in: path
             name: task_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: date
@@ -1101,12 +1141,14 @@ class DeleteAllTasksForTaskTypeResource(Resource):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: path
             name: task_type_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             204:
@@ -1140,7 +1182,8 @@ class DeleteTasksResource(Resource):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -1173,7 +1216,8 @@ class ProjectSubscriptionsResource(Resource):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -1202,7 +1246,8 @@ class ProjectNotificationsResource(Resource, ArgsMixin):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -1234,7 +1279,8 @@ class ProjectTasksResource(Resource, ArgsMixin):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -1264,7 +1310,8 @@ class ProjectCommentsResource(Resource, ArgsMixin):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
@@ -1292,7 +1339,8 @@ class ProjectPreviewFilesResource(Resource, ArgsMixin):
           - in: path
             name: project_id
             required: True
-            type: UUID
+            type: string
+            format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             200:
