@@ -524,9 +524,8 @@ class PreviewFileResource(Resource):
           - in: path
             name: extension
             required: True
-            schema:
-                type: string
-                example: png, pdf, jpg, jpeg, ...
+            type: string
+            x-example: png, pdf, jpg, jpeg, ...
         responses:
             200:
                 description: Generic file preview downloaded

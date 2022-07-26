@@ -993,9 +993,9 @@ class TaskTimeSpentResource(Resource):
           - in: path
             name: date
             required: True
-            schema:
-                type: string
-                example: 2022-07-12
+            type: string
+            format: date
+            x-example: 2022-07-12
         responses:
             200:
                 description:  Time spents for current user and given date
@@ -1029,7 +1029,7 @@ class DayOffResource(Resource):
             required: True
             type: string
             format: date
-            example: 2022-07-12
+            x-example: 2022-07-12
         responses:
             200:
                 description:  Day off object for current user and given date

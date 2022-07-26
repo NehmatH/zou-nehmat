@@ -969,7 +969,7 @@ class SetTimeSpentResource(Resource):
             required: True
             type: string
             format: date
-            example: 2022-07-12
+            x-example: 2022-07-12
           - in: path
             name: person_id
             required: True
@@ -1039,7 +1039,7 @@ class AddTimeSpentResource(Resource):
             required: True
             type: string
             format: date
-            example: 2022-07-12
+            x-example: 2022-07-12
           - in: path
             name: person_id
             required: True
@@ -1107,7 +1107,7 @@ class GetTimeSpentResource(Resource):
             required: True
             type: string
             format: date
-            example: 2022-07-12
+            x-example: 2022-07-12
         responses:
             200:
                 description: Time spent on given task by given person
