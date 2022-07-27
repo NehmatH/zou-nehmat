@@ -47,7 +47,7 @@ swagger_template = {
     },
   },
   "host": "instance.kitsu.com",
-  "basePath": "/",
+  "basePath": "/api",
   "schemes": [
     "http",
     "https"
