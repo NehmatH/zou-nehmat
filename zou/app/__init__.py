@@ -232,58 +232,7 @@ swagger_template = {
         }
       },
       "Persons": {
-        "type": "object",
-        "properties": {
-          "first_name": {
-            "type": "string"
-          },
-          "last_name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "phone": {
-            "type": "string"
-          },
-          "active": {
-            "type": "boolean",
-            "default": "true"
-          },
-          "last_presence": {
-            "type": "string",
-            "format": "date"
-          },
-          "password": {
-            "type": "string",
-            "format": "byte"
-          },
-          "desktop_login": {
-            "type": "string"
-          },
-          "shotgun_id": {
-            "type": "string",
-            "format": "UUID"
-          },
-          "timezone": {
-            "type": "string"
-          },
-          "locale": {
-            "type": "string"
-          },
-          "data": {
-            "type": "string",
-            "format": "json"
-          },
-          "role": {
-            "type": "string",
-            "default": "user"
-          },
-          "has_avatar": {
-            "type": "boolean",
-            "default": "False"
-          }
-        }
+        "$ref" : "def.json#/Persons"
       },
       "Playlists": {
         "type": "object",
