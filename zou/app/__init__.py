@@ -232,7 +232,7 @@ swagger_template = {
         }
       },
       "Persons": {
-        "$ref" : "def.json#/Persons"
+        "$ref" : "definitions.json#/Persons"
       },
       "Playlists": {
         "type": "object",
