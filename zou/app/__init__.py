@@ -46,7 +46,7 @@ swagger_template = {
         "url": "https://www.gnu.org/licenses/agpl-3.0.en.html"
     },
   },
-  "host": "apidocs.cg-wire.com",
+  "host": "instance.kitsu.com",
   "basePath": "/",
   "schemes": [
     "http",
@@ -79,57 +79,82 @@ swagger_template = {
       "Assets": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "example": "jsdshd"
+          "name": {
+            "type": "string"
           },
-          "petId": {
-            "type": "integer",
-            "format": "int64"
+          "code": {
+            "type": "string"
           },
-          "quantity": {
-            "type": "integer",
-            "format": "int32"
+          "description": {
+            "type": "string"
           },
-          "shipDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "status": {
-            "type": "string",
-            "description": "Order Status",
-            "enum": [
-              "placed",
-              "approved",
-              "delivered"
-            ]
-          },
-          "complete": {
+          "canceled": {
             "type": "boolean",
             "default": "False"
+          },
+          "project_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "entity_type_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "source_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "preview_file_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "data": {
+            "type": "string",
+            "format": "json"
+          },
+          "shotgun_id": {
+            "type": "string",
+            "format": "UUID"
           }
         }
       },
       "Asset instances": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
+          "asset_id": {
+            "type": "string",
+            "format": "UUID"
           },
           "name": {
             "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean",
+            "default": "True"
+          },
+          "data": {
+            "type": "string",
+            "format": "json"
+          },
+          "scene_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "target_asset_id": {
+            "type": "string",
+            "format": "UUID"
           }
         }
       },
       "Asset types": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "name": {
             "type": "string"
           }
@@ -138,12 +163,47 @@ swagger_template = {
       "Comments": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
+          "shotgun_id": {
+            "type": "string",
+            "format": "UUID"
           },
-          "name": {
+          "object_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "object_type": {
             "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string",
+            "format": "json"
+          },
+          "replies": {
+            "type": "string",
+            "format": "json",
+            "default": "[]"
+          },
+          "checklist": {
+            "type": "string",
+            "format": "json"
+          },
+          "pinned": {
+            "type": "boolean"
+          },
+          "task_status_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "person_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "preview_file_id": {
+            "type": "string",
+            "format": "UUID"
           }
         }
       },
