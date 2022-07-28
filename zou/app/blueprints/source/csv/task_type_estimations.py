@@ -145,7 +145,6 @@ class TaskTypeEstimationsEpisodeCsvImportResource(
             type: string
             format: UUID
             x-example: a24a6ea4-ce75-4665-a070-57453082c25  
-            allowEmptyValue: true   
         responses:
             201:
                 description: Estimations imported
