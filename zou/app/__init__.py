@@ -46,11 +46,11 @@ swagger_template = {
         "url": "https://www.gnu.org/licenses/agpl-3.0.en.html"
     },
   },
-  "host": "instance.kitsu.com",
+  "host": "localhost:8080",
   "basePath": "/api",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "tags": [
     { "name": "Authentification" },
