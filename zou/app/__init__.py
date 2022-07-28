@@ -38,6 +38,7 @@ swagger_template = {
     "contact": {
       "email": "support@cg-wire.com",
       "url": "https://www.cg-wire.com",
+      "description": "The developer - Website"
     },
     "termsOfService": "https://www.cg-wire.com/terms.html",
     "version": __version__,
