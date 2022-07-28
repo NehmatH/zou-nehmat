@@ -210,35 +210,64 @@ swagger_template = {
       "Episodes": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "name": {
             "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "canceled": {
+            "type": "boolean",
+            "default": "False"
+          },
+          "project_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "source_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "preview_file_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "data": {
+            "type": "string",
+            "format": "json"
+          },
+          "shotgun_id": {
+            "type": "string",
+            "format": "UUID"
           }
         }
       },
       "Events": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "name": {
             "type": "string"
+          },
+          "user_id": {
+            "type": "string",
+            "format": "UUID"
+          },
+          "data": {
+            "type": "string",
+            "format": "json"
           }
         }
       },
       "File status": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "name": {
+            "type": "string"
+          },
+          "color": {
             "type": "string"
           }
         }
