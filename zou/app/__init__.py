@@ -527,7 +527,7 @@ swagger_template = {
             "description": "Login used on desktop"
           },
           "shotgun_id": {
-            "type": "int",
+            "type": "integer",
             "description": "Used for synchronization with a Shotgun instance"
           },
           "timezone": {
