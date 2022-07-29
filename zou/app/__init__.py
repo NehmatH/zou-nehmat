@@ -617,12 +617,113 @@ swagger_template = {
       "Preview files": {
         "type": "object",
         "properties": {
-          "id": {
+          "shotgun_id": {
             "type": "integer",
-            "format": "int64"
+            "description": "Used for synchronization with a Shotgun instance"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of preview file"
+          },
+          "original_name": {
+            "type": "string",
+            "description": "Original name of preview file"
+          },
+          "revision": {
+            "type": "integer",
+            "default": "1",
+            "description": "Revision number of preview file"
+          },
+          "position": {
+            "type": "integer",
+            "default": "1",
+            "description": "Position of preview file"
+          },
+          "extension": {
+            "type": "string",
+            "description": "Extension of preview file"
+          },
+          "description": {
+            "type": "string",
+            "description": "Preview file brief"
+          },
+          "path": {
+            "type": "string",
+            "description": "File path on the production hard drive"
+          },
+          "source": {
+            "type": "string",
+            "description": "Created by a script, a webgui or a desktop gui"
+          },
+          "file_size": {
+            "type": "integer",
+            "default": "0",
+            "description": "Size of output file"
+          },
+          "comment": {
+            "type": "string",
+            "description": "Comment on output file"
+          },
+          "checksum": {
+            "type": "string",
+            "description": "Checksum of output file"
+          },
+          "representation": {
+            "type": "string",
+            "description": "Precise what kind of output it is (abc, jpgs, pngs, etc.)"
+          },
+          "nb_elements": {
+            "type": "integer",
+            "default": "1",
+            "description": "For image sequence"
+          },
+          "canceled": {
+            "type": "boolean",
+          },
+          "file_status_id": {
+            "type": "string",
+            "format": "UUID",
+            "description": "File status ID"
+          },
+          "entity_id": {
+            "type": "string",
+            "format": "UUID",
+            "description": "Asset or Shot concerned by the output file"
+          },
+          "asset_instance_id": {
+            "type": "string",
+            "format": "UUID",
+            "description": "Asset instance ID"
+          },
+          "output_type_id": {
+            "type": "string",
+            "format": "UUID",
+            "description": "Type of output (geometry, cache, etc.)"
+          },
+          "task_type_id": {
+            "type": "string",
+            "format": "UUID",
+            "description": "Task type related to this output file (modeling, animation, etc.)"
+          },
+          "person_id": {
+            "type": "string",
+            "format": "UUID",
+            "description": "Author of the file"
+          },
+          "source_file_id": {
+            "type": "string",
+            "format": "UUID",
+            "description": "Working file that led to create this output file"
+          },
+          "temporal_entity_id": {
+            "type": "string",
+            "format": "UUID",
+            "description": "Shot, scene or sequence needed for output files related to an asset instance"
+          },
+          "data": {
+            "type": "string",
+            "format": "json",
+            "description": "Free JSON field to add metadata"
           }
         }
       },
