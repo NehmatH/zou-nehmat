@@ -28,6 +28,7 @@ class AssetResource(Resource):
     """
     Retrieve or delete given asset.
     """
+
     @jwt_required
     def get(self, asset_id):
         """
@@ -86,6 +87,7 @@ class AllAssetsResource(Resource):
     Retrieve all entities that are not shot or sequence.
     Adds project name and asset type name.
     """
+
     @jwt_required
     def get(self):
         """
@@ -113,12 +115,13 @@ class AllAssetsAliasResource(AllAssetsResource):
 
 class AssetsAndTasksResource(Resource):
     """
-    Retrieve all entities that are not shot or sequence.   
+    Retrieve all entities that are not shot or sequence.
     """
+
     @jwt_required
     def get(self):
         """
-        Retrieve all entities that are not shot or sequence.   
+        Retrieve all entities that are not shot or sequence.
         ---
         description: Adds project name and asset type name and all related tasks.
                      If episode_id is given as parameter, it returns assets not linked
@@ -143,6 +146,7 @@ class AssetTypeResource(Resource):
     """
     Retrieve given asset type.
     """
+
     @jwt_required
     def get(self, asset_type_id):
         """
@@ -168,6 +172,7 @@ class AssetTypesResource(Resource):
     """
     Retrieve all asset types (entity types that are not shot, sequence or episode).
     """
+
     @jwt_required
     def get(self):
         """
@@ -187,6 +192,7 @@ class ProjectAssetTypesResource(Resource):
     """
     Retrieve all asset types for given project.
     """
+
     @jwt_required
     def get(self, project_id):
         """
@@ -213,6 +219,7 @@ class ShotAssetTypesResource(Resource):
     """
     Retrieve all asset shots for given shot.
     """
+
     @jwt_required
     def get(self, shot_id):
         """
@@ -240,6 +247,7 @@ class ProjectAssetsResource(Resource):
     """
     Retrieve all assets for given project.
     """
+
     @jwt_required
     def get(self, project_id):
         """
@@ -272,6 +280,7 @@ class ProjectAssetTypeAssetsResource(Resource):
     """
     Retrieve all assets for given project and entity type.
     """
+
     @jwt_required
     def get(self, project_id, asset_type_id):
         """
@@ -294,7 +303,7 @@ class ProjectAssetTypeAssetsResource(Resource):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25        
         responses:
             200:
-                description: All assets for given project and entity type    
+                description: All assets for given project and entity type
         """
         user_service.check_project_access(project_id)
         criterions = query.get_query_criterions_from_request(request)
@@ -311,6 +320,7 @@ class AssetAssetsResource(Resource):
     """
     Retrieve all assets for a given asset.
     """
+
     @jwt_required
     def get(self, asset_id):
         """
@@ -327,7 +337,7 @@ class AssetAssetsResource(Resource):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
-                description: All assets for a given asset    
+                description: All assets for a given asset
         """
         asset = assets_service.get_asset(asset_id)
         user_service.check_project_access(asset["project_id"])
@@ -352,7 +362,7 @@ class AssetTasksResource(Resource):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
-                description: All tasks related to given shot   
+                description: All tasks related to given shot
         """
         asset = assets_service.get_asset(asset_id)
         user_service.check_project_access(asset["project_id"])
@@ -376,7 +386,7 @@ class AssetTaskTypesResource(Resource):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
-                description: All task types related to given asset    
+                description: All task types related to given asset
         """
         asset = assets_service.get_asset(asset_id)
         user_service.check_project_access(asset["project_id"])
@@ -387,6 +397,7 @@ class NewAssetResource(Resource):
     """
     Create new asset resource.
     """
+
     @jwt_required
     def post(self, project_id, asset_type_id):
         """
@@ -421,7 +432,7 @@ class NewAssetResource(Resource):
                     name:
                         type: string
                     description:
-                        type: string  
+                        type: string
                     data:
                         type: string
                     source_id:
@@ -430,7 +441,7 @@ class NewAssetResource(Resource):
                         example: a24a6ea4-ce75-4665-a070-57453082c25
         responses:
             201:
-                description: New asset resource created    
+                description: New asset resource created
         """
         (name, description, data, source_id) = self.get_arguments()
 
@@ -474,7 +485,7 @@ class AssetCastingResource(Resource):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
-                description: Casting of given asset    
+                description: Casting of given asset
         """
         asset = assets_service.get_asset(asset_id)
         user_service.check_project_access(asset["project_id"])
@@ -497,7 +508,7 @@ class AssetCastingResource(Resource):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
-                description: Modification of assets linked to given asset    
+                description: Modification of assets linked to given asset
         """
         casting = request.json
         asset = assets_service.get_asset(asset_id)
@@ -522,7 +533,7 @@ class AssetCastInResource(Resource):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
-                description: Casting of given asset    
+                description: Casting of given asset
         """
         asset = assets_service.get_asset(asset_id)
         user_service.check_project_access(asset["project_id"])
@@ -547,7 +558,7 @@ class AssetShotAssetInstancesResource(Resource):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
-                description: All shot asset instances linked to asset    
+                description: All shot asset instances linked to asset
         """
         asset = assets_service.get_asset(asset_id)
         user_service.check_project_access(asset["project_id"])
@@ -571,7 +582,7 @@ class AssetSceneAssetInstancesResource(Resource):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
-                description: All scene asset instances linked to asset    
+                description: All scene asset instances linked to asset
         """
         asset = assets_service.get_asset(asset_id)
         user_service.check_project_access(asset["project_id"])
@@ -595,7 +606,7 @@ class AssetAssetInstancesResource(Resource, ArgsMixin):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             200:
-                description: All asset instances instantiated inside given asset    
+                description: All asset instances instantiated inside given asset
         """
         asset = assets_service.get_asset(asset_id)
         user_service.check_project_access(asset["project_id"])
@@ -617,7 +628,7 @@ class AssetAssetInstancesResource(Resource, ArgsMixin):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25       
         responses:
             201:
-                description: Asset instance created inside given asset    
+                description: Asset instance created inside given asset
         """
         args = self.get_args(
             [

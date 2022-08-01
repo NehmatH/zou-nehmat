@@ -179,7 +179,7 @@ class WorkingFilePathResource(Resource):
                         type: string
                         default: main
                     mode:
-                        type: string  
+                        type: string
                         default: working
                     software_id:
                         type: string
@@ -302,7 +302,7 @@ class EntityOutputFilePathResource(Resource, ArgsMixin):
                         type: string
                         default: main
                     mode:
-                        type: string  
+                        type: string
                         default: output
                     output_type_id:
                         type: string
@@ -388,7 +388,7 @@ class EntityOutputFilePathResource(Resource, ArgsMixin):
 class InstanceOutputFilePathResource(Resource, ArgsMixin):
     """
     Generate from file tree template an output file path based on several
-    parameters: asset instance, output type, task type, revision, mode, name and separator. 
+    parameters: asset instance, output type, task type, revision, mode, name and separator.
     Revision can be computed automatically as next revision in case no revision is given in parameter.
     """
 
@@ -416,7 +416,7 @@ class InstanceOutputFilePathResource(Resource, ArgsMixin):
             x-example: a24a6ea4-ce75-4665-a070-57453082c25
           - in: body
             name: File
-            description: Asset instance, output type, task type, revision, mode, name and separator. 
+            description: Asset instance, output type, task type, revision, mode, name and separator.
             schema:
                 type: object
                 required:
@@ -427,7 +427,7 @@ class InstanceOutputFilePathResource(Resource, ArgsMixin):
                         type: string
                         default: main
                     mode:
-                        type: string  
+                        type: string
                         default: output
                     output_type_id:
                         type: string
@@ -574,8 +574,8 @@ class TaskWorkingFilesResource(Resource):
 
 class NewWorkingFileResource(Resource):
     """
-    A working file is a file used to produce output files. 
-    It is the file the CG artist is working on. 
+    A working file is a file used to produce output files.
+    It is the file the CG artist is working on.
     It is versioned, tied to a task and a software and requires a comment each time it is created.
     A path is generated for each file created. The path format is defined in the file tree template file.
     """
@@ -587,8 +587,8 @@ class NewWorkingFileResource(Resource):
         ---
         tags:
         - Files
-        description: A working file is a file used to produce output files. 
-                     It is the file the CG artist is working on. 
+        description: A working file is a file used to produce output files.
+                     It is the file the CG artist is working on.
                      It is versioned, tied to a task and a software and requires a comment each time it is created.
                      A path is generated for each file created. The path format is defined in the file tree template file.
         parameters:
@@ -609,7 +609,7 @@ class NewWorkingFileResource(Resource):
                     name:
                         type: string
                     mode:
-                        type: string  
+                        type: string
                         default: working
                     description:
                         type: string
@@ -823,11 +823,11 @@ class NewEntityOutputFileResource(Resource, ArgsMixin):
         ---
         tags:
         - Files
-        description: Output files are linked to entities. 
-                     Each time a CG artist is satisfied by what he did on a working file, 
+        description: Output files are linked to entities.
+                     Each time a CG artist is satisfied by what he did on a working file,
                      he can create an output file that will be linked to a target entity (an asset, a shot, a sequence, ...).
                      It keeps track of the working file at the origin of the output file.
-                     An output type is required for better categorization (textures, caches, ...). 
+                     An output type is required for better categorization (textures, caches, ...).
                      A task type can be set too to give the department related to the output file.
                      Revision is automatically set.
         parameters:
@@ -849,7 +849,7 @@ class NewEntityOutputFileResource(Resource, ArgsMixin):
                     name:
                         type: string
                     mode:
-                        type: string  
+                        type: string
                         default: output
                     output_type_id:
                         type: string
@@ -1038,8 +1038,8 @@ class NewInstanceOutputFileResource(Resource, ArgsMixin):
         ---
         tags:
         - Files
-        description: Some output files are linked to assets through an instance of this asset for a given shot. 
-                     Each time a CG artist is satisfied by what he did on a working file, 
+        description: Some output files are linked to assets through an instance of this asset for a given shot.
+                     Each time a CG artist is satisfied by what he did on a working file,
                      he can create an output file that will be linked to a target instance.
                      It keeps track of the working file at the origin of the output file.
                      An output type is required for better categorization (textures, caches, ...).
@@ -1070,7 +1070,7 @@ class NewInstanceOutputFileResource(Resource, ArgsMixin):
                         type: string
                         default: main
                     mode:
-                        type: string  
+                        type: string
                         default: output
                     output_type_id:
                         type: string
@@ -1770,11 +1770,11 @@ class SetTreeResource(Resource):
     @jwt_required
     def post(self, project_id):
         """
-        Define a template file to use for given project. 
+        Define a template file to use for given project.
         ---
         tags:
         - Files
-        description: Template files are located on the server side. 
+        description: Template files are located on the server side.
                      Each template has a name which means that you just have to give a name to "select" the template to link with the project.
         parameters:
           - in: path
