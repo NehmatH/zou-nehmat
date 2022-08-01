@@ -47,6 +47,10 @@ swagger_template = {
         "url": "https://www.gnu.org/licenses/agpl-3.0.en.html"
     },
   },
+  "externalDocs": {
+    "description": "OpenAPI definition",
+    "url": "/apispec_1.json"
+  },
   "host": "localhost:8080",
   "basePath": "/api",
   "schemes": [
