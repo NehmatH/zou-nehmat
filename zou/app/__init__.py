@@ -49,7 +49,7 @@ swagger_template = {
   },
   "externalDocs": {
     "description": "OpenAPI definition",
-    "url": "/apispec_1.json"
+    "url": "/openapi.json"
   },
   "host": "localhost:8080",
   "basePath": "/api",
