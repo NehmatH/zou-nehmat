@@ -734,11 +734,95 @@ swagger_template = {
       "Projects": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "name": {
+            "type": "string",
+            "description": "Name of project"
+          },
+          "code": {
+            "type": "string",
+            "description": "Utility field for the pipeline to identify the project"
+          },
+          "description": {
+            "type": "string",
+            "description": "Project brief"
+          },
+          "shotgun_id": {
+            "type": "integer",
+            "description": "Used for synchronization with a Shotgun instance"
+          },
+          "file_tree": {
+            "type": "string",
+            "format": "json",
+            "description": "Templates to use to build file paths"
+          },
+          "data": {
+            "type": "string",
+            "format": "json",
+            "description": "Free JSON field to add metadata"
+          },
+          "project_status_id": {
+            "type": "string",
+            "format": "UUID",
+            "description": "Project status ID"
+          },
+          "has_avatar": {
+            "type": "boolean",
+            "default": "False",
+            "description": "True if the project has an avatar, False otherwise"
+          },
+          "fps": {
+            "type": "string",
+            "description": "Frames per second"
+          },
+          "ratio": {
+            "type": "string"
+          },
+          "resolution": {
+            "type": "string"
+          },
+          "production_type": {
+            "type": "string",
+            "description": "short, featurefilm or tvshow",
+            "default": "short"
+          },
+          "end_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "start_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "man_days": {
+            "type": "integer",
+            "description": "Estimated number of working days required to finish project"
+          },
+          "nb_episodes": {
+            "type": "integer",
+            "default": "0"
+          },
+          "episode_span": {
+            "type": "integer",
+            "default": "0"
+          },
+          "max_retakes": {
+            "type": "integer",
+            "default": "0"
+          },
+          "is_clients_isolated": {
+            "type": "boolean",
+            "default": "False",
+            "description": "True if the clients are isolated from the project, False otherwise"
+          }
+        }
+      },
+      "Project status": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "color": {
             "type": "string"
           }
         }
@@ -870,7 +954,8 @@ swagger_config = {
     "headers": [
       ('Access-Control-Allow-Origin', '*'),
       ('Access-Control-Allow-Methods', "GET, POST, PUT, DELETE, OPTIONS"),
-      ('Access-Control-Allow-Credentials', "true")
+      ('Access-Control-Allow-Credentials', "true"),
+      ('Access-Control-Allow-Headers', "Authorization, Origin, X-Requested-With, Content-Type, Accept")
     ],
     "specs": [
         {
