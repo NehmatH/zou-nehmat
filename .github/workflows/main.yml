@@ -1,0 +1,40 @@
+name: Deploy Zou to staging environment and update apidocs
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update Zou on staging server
+      uses: appleboy/ssh-action@v0.1.4
+      with:
+       host: ${{ secrets.HOST }}
+       username: ${{ secrets.USERNAME }}
+       key: ${{ secrets.KEY }}
+       port: ${{ secrets.PORT }}
+       script_stop: true
+       script: |
+         cd /opt/zou
+         source /etc/zou/zou.env
+         sudo /opt/zou/zouenv/bin/pip install --upgrade git+https://github.com/cgwire/zou.git
+         sudo -E -u zou /opt/zou/zouenv/bin/zou upgrade-db
+         sudo systemctl restart zou zou-events zou-jobs
+    - name: Update openapi.json
+      uses: actions/checkout@v3
+      with:
+        ref: apidocs 
+      run: |
+        cd docs
+        git config --global user.email "no-reply@cg-wire.com"
+        git config --global user.name "CGWire bot"
+        git commit -m "openapi.json from master" || true
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: apidocs
