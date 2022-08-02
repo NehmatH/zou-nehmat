@@ -762,7 +762,7 @@ swagger_template = {
             "type": "integer",
             "format": "int64"
           },
-          "name": {
+          "seq": {
             "type": "string"
           }
         }
@@ -866,6 +866,22 @@ swagger_template = {
     }
 }
 
+swagger_config = {
+    "headers": [
+      ('Access-Control-Allow-Origin', '*'),
+      ('Access-Control-Allow-Methods', "GET, POST, PUT, DELETE, OPTIONS"),
+      ('Access-Control-Allow-Credentials', "true")
+    ],
+    "specs": [
+        {
+            "endpoint": 'openapi',
+            "route": '/openapi.json'
+        }
+    ],
+    "static_url_path": "/docs",
+    "swagger_ui": True,
+    "specs_route": "/apidocs/"
+}
 
 logs.configure_logs(app)
 
@@ -891,7 +907,7 @@ cache.cache.init_app(app)  # Function caching
 flask_fs.init_app(app)  # To save files in object storage
 mail = Mail()
 mail.init_app(app)  # To send emails
-swagger = Swagger(app, template=swagger_template)
+swagger = Swagger(app, template=swagger_template, config=swagger_config)
 
 
 @app.teardown_appcontext
