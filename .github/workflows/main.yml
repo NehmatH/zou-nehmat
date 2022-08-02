@@ -29,7 +29,7 @@ jobs:
         ref: apidocs 
     - name: Update openapi.json
       run: |
-        cd doc
+        cd docs
         curl --output openapi.json https://nehmath.github.io/zou-nehmat/openapi.json
         git config --global user.email "no-reply@cg-wire.com"
         git config --global user.name "CGWire bot"
