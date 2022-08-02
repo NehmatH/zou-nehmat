@@ -13,10 +13,6 @@ jobs:
     - name: Update Zou on staging server
       uses: appleboy/ssh-action@v0.1.4
       with:
-       host: ${{ secrets.HOST }}
-       username: ${{ secrets.USERNAME }}
-       key: ${{ secrets.KEY }}
-       port: ${{ secrets.PORT }}
        script_stop: true
        script: |
          cd /opt/zou
