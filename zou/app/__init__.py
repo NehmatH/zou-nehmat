@@ -352,11 +352,11 @@ swagger_template = {
         "properties": {
           "name": {
             "type": "string",
-            "format": "Name of department"
+            "description": "Name of department"
           },
           "color": {
             "type": "string",
-            "format": "Color of department"
+            "description": "Color of department"
           }
         }
       },
