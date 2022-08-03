@@ -83,8 +83,7 @@ swagger_template = {
           " id": {
             "type": "string",
             "format": "UUID",
-            "descrpition": "A unique ID made of letters, hyphens and numbers",
-            "example": "a24a6ea4-ce75-4665-a070-57453082c25"
+            "descrpition": "A unique ID made of letters, hyphens and numbers : a24a6ea4-ce75-4665-a070-57453082c25"
           },
           "created_at": {
             "type": "string",
